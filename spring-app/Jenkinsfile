@@ -13,12 +13,6 @@ pipeline {
     GIT_USER_NAME = "ErickGichuki"
   }
   stages {
-    stage('cleaning'){
-      steps {
-        echo 'Cleaning up workspaces...'
-        deleteDir()
-      }
-    }
     stage('Checkout') {
       steps {
         echo "Checking out code..."
