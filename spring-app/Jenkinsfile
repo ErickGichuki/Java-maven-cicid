@@ -34,32 +34,32 @@ pipeline {
         }
       }
     }
-    stage('Build and Push Docker Image') {
-      steps {
-        script {
-          echo "Building Docker image..."
-          def imageTag = "${DOCKER_IMAGE_PREFIX}:${BUILD_NUMBER}"
-          sh 'cd spring-app && docker build -t ${imageTag} .'
-          docker.withRegistry(REGISTRY_URL, "docker-cred") {
-            docker.image(imageTag).push()
-          }
-        }
-      }
-    }
-    stage('Update Deployment File') {
-      steps {
-        echo "Updating deployment file..."
-        withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
-          sh '''
-            git config user.email "erick.xyz@gmail.com"
-            git config user.name "ErickGichuki"
-            sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-manifest/deployment.yml
-            git add spring-manifest/deployment.yml
-            git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-            git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
-          '''
-        }
-      }
-    }
+    // stage('Build and Push Docker Image') {
+    //   steps {
+    //     script {
+    //       echo "Building Docker image..."
+    //       def imageTag = "${DOCKER_IMAGE_PREFIX}:${BUILD_NUMBER}"
+    //       sh 'cd spring-app && docker build -t ${imageTag} .'
+    //       docker.withRegistry(REGISTRY_URL, "docker-cred") {
+    //         docker.image(imageTag).push()
+    //       }
+    //     }
+    //   }
+    // }
+    // stage('Update Deployment File') {
+    //   steps {
+    //     echo "Updating deployment file..."
+    //     withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+    //       sh '''
+    //         git config user.email "erick.xyz@gmail.com"
+    //         git config user.name "ErickGichuki"
+    //         sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-manifest/deployment.yml
+    //         git add spring-manifest/deployment.yml
+    //         git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+    //         git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+    //       '''
+    //     }
+    //   }
+    // }
   }
 }
