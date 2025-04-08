@@ -8,7 +8,7 @@ pipeline {
   environment {
     SONAR_URL = "http://52.33.232.90:9000/"
     DOCKER_IMAGE_PREFIX = "erickgichukimucheru/java:v1"
-    // REGISTRY_URL = "https://index.docker.io/v1/"
+    REGISTRY_URL = "https://www.docker.com/"
     GIT_REPO_NAME = "Java-maven-cicid"
     GIT_USER_NAME = "ErickGichuki"
   }
@@ -16,7 +16,7 @@ pipeline {
     stage('Checkout') {
       steps {
         echo "Checking out code..."
-        git branch: 'main', url: 'https://github.com/ErickGichuki/Java-maven-cicid.git'
+        git branch: 'main', url: 'https://github.com/ErickGichuki/Java-maven-cicid.git' 
       }
     }
     stage('Build and Test') {
