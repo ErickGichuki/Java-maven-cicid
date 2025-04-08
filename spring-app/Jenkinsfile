@@ -16,7 +16,7 @@ pipeline {
     stage('Checkout') {
       steps {
         echo "Checking out code..."
-        git branch: 'main', url: 'https://github.com/ErickGichuki/Java-maven-cicid.git' // url
+        git branch: 'main', url: 'https://github.com/ErickGichuki/Java-maven-cicid.git'
       }
     }
     stage('Build and Test') {
