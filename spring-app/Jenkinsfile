@@ -43,7 +43,7 @@ pipeline {
         script {
           echo "Building Docker image..."
           def imageTag = "${DOCKER_IMAGE_PREFIX}:${BUILD_NUMBER}"
-          sh 'cd spring-app && docker build -t ${imageTag} .'
+          sh "cd spring-app && docker build -t ${imageTag} ."
           docker.withRegistry(REGISTRY_URL, "docker-cred") {
             docker.image(imageTag).push()
           }
