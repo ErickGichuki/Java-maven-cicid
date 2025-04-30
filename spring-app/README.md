@@ -34,3 +34,10 @@ sudo apt-get install jenkins
     ```cd sonarqube-9.4.0.54424/bin/linux-x86-64/```
     ```./sonar.sh start```
 - access the server on ```http://<ip-address>:9000```
+- Install docker pipeline, SonarQube scanner
+- To integrate sonar with jenkins we'll setup the cred.
+- Click on > My Account > Security > Give a token name and > Generate > Copy the token.
+- Go back to Jenkins Dashboard under credentials add the secret with secret text kind and id as sonarqube
+
+Role of SonarQube
+- Ensuring code quality, security. It detects bugs, enforces cooding standards, measures code coverage, identifies code smells and improves maintainability.
