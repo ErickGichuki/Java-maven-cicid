@@ -9,7 +9,7 @@ pipeline {
     SONAR_URL = "http://34.214.184.97:9000/"
     DOCKER_IMAGE_PREFIX = "erickgichukimucheru/java:v1"
     REGISTRY_URL = "https://www.docker.com/"
-    GIT_REPO_NAME = "Java-maven-cicid"
+    GIT_REPO_NAME = "Java-maven-cicid"//
     GIT_USER_NAME = "ErickGichuki"
   }
   stages {
