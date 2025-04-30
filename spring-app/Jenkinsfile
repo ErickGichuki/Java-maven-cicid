@@ -2,12 +2,12 @@ pipeline {
   agent {
      docker {
       image 'abhishekf5/maven-abhishek-docker-agent:v1'
-      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' //mmount
+      args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
   environment {
     SONAR_URL = "http://44.248.42.50:9000/"
-    DOCKER_IMAGE_PREFIX = "erickgichukimucheru/java"
+    DOCKER_IMAGE_PREFIX = "erickgichukimucheru"
     REGISTRY_URL = "https://index.docker.io/"
     GIT_REPO_NAME = "Java-maven-cicid"
     GIT_USER_NAME = "ErickGichuki"
