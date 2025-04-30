@@ -43,7 +43,7 @@ sudo apt-get install jenkins -y
 Role of SonarQube
 - Ensuring code quality, security. It detects bugs, enforces cooding standards, measures code coverage, identifies code smells and improves maintainability.
 
-Continuous Delivery
+Continuous Delivery(CD)
 - ```curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64```
 - instal minikube ```sudo install minikube-linux-amd64 /usr/local/bin/minikube```
 - verify installation ```minikube version```
