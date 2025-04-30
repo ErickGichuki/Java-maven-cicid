@@ -4,7 +4,10 @@ pipeline {
     //   image 'erickgichukimucheru/maven-erick-docker-agent:v1'
     //   args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
     // }
-    any
+    docker {
+      image 'abhishekf5/maven-abhishek-docker-agent:v1'
+      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+    }
   }
   environment {
     SONAR_URL = "http://34.214.184.97:9000/"

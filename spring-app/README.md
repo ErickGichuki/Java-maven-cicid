@@ -8,14 +8,15 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   https://pkg.jenkins.io/debian binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update
-sudo apt-get install jenkins
+sudo apt-get install jenkins -y
 
 - Install docker as agent
 - ```sudo apt update```
-    ```sudo apt install docker.io```
-- Grant jenkins user permissions to docker daemon
+    ```sudo apt install docker.io -y```
+- Grant jenkins and ubuntu user permissions to docker daemon
  ```sudo su - ```
  ```usermod -aG docker jenkins```
+ ```usermod -aG docker ubuntu```
  ```systemctl restart docker```
 - execute locally ```java -jar target/spring-boot-web.jar```
 - Execute the Maven targets to generate the artifacts ```mvn clean package```
@@ -41,3 +42,9 @@ sudo apt-get install jenkins
 
 Role of SonarQube
 - Ensuring code quality, security. It detects bugs, enforces cooding standards, measures code coverage, identifies code smells and improves maintainability.
+
+Continuous Delivery
+- ```curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64```
+- instal minikube ```sudo install minikube-linux-amd64 /usr/local/bin/minikube```
+- verify installation ```minikube version```
+- start minikube ```sudo minikube start --driver=none```
