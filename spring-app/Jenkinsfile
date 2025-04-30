@@ -1,9 +1,10 @@
 pipeline {
   agent {
-    docker {
-      image 'erickgichukimucheru/maven-erick-docker-agent:v1'
-      args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
-    }
+    // docker {
+    //   image 'erickgichukimucheru/maven-erick-docker-agent:v1'
+    //   args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
+    // }
+    any
   }
   environment {
     SONAR_URL = "http://34.214.184.97:9000/"
