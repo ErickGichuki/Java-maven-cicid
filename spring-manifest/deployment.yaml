@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-boot-app
+  name: bericks
   labels:
-    app: spring-boot-app
+    app: bericks
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: spring-boot-app
+      app: bericks
   template:
     metadata:
       labels:
-        app: spring-boot-app
+        app: bericks
     spec:
       containers:
-      - name: spring-boot-app
+      - name: bericks
         image: abhishekf5/ultimate-cicd:replaceImageTag
         ports:
         - containerPort: 8080
