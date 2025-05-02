@@ -46,7 +46,7 @@ pipeline {
         }
       }
     } 
-    //using GitOps
+    //using GitOps(ArgoCD)
     stage('Update Deployment File') {
       steps {
         echo "Updating deployment file..."
