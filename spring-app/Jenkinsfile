@@ -53,8 +53,8 @@ pipeline {
           sh '''
             git config user.email "erickgichukimucheru@gmail.com"
             git config user.name "ErickGichuki"
-            sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-manifest/deployment.yml
-            git add spring-manifest/deployment.yml
+            sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-manifest/deployment.yaml
+            git add spring-manifest/deployment.yaml
             git commit -m "Update deployment image to version ${BUILD_NUMBER}"
             git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
           '''
