@@ -31,4 +31,8 @@ Install ArgoCD from the official docs
 
 Hurray! The ArgoCD UI is here with you!!!!
 
+Accessing the service
+- Run ```kubectl port-forward svc/bericks-service 8000:80 --address 0.0.0.0```
+- Ensure you open port 8000 and then copy the instance ip address then you can access from your browser!!!!!
+
 
