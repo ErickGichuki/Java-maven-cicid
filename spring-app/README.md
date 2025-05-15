@@ -36,7 +36,7 @@ sudo apt install openjdk-17-jre
 - configuring sonarqube: 
 
     ```apt install unzip
-        adduser sonarqube
+        sudo adduser sonarqube
         sudo su - sonarqube
         wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
         unzip *
@@ -45,7 +45,10 @@ sudo apt install openjdk-17-jre
         cd sonarqube-9.4.0.54424/bin/linux-x86-64/
         ./sonar.sh start
     ```
-- access the server on ```http://<ip-address>:9000```
+- access the server on
+  ```
+  http://<ip-address>:9000
+  ```
 - Install docker pipeline, SonarQube scanner
 - To integrate sonar with jenkins we'll setup the cred.
 - Click on > My Account > Security > Give a token name and > Generate > Copy the token.
