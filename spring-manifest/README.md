@@ -25,9 +25,10 @@ Install ArgoCD from the official docs
 - Verify the pods creation ```kubectl get pods -n argocd``` or to watch while they are being created```kubectl get pods -n argocd -w```.
 - Port forwading ```kubectl port-forward svc/argocd-server -n argocd 8080:443 --address 0.0.0.0```.
 - Proceed to the argo UI the username is ```admin``` by default then the password you have to get it by:
-  - ```kubectl get secrets -n argocd```
-  - ```kubectl edit secret argocd-initial-admin-secret -n argocd```
-  - ```echo aE1tSDEzckotQkFmRHZsLQ== | base64 --decode```
+  ``` kubectl get secrets -n argocd
+      kubectl edit secret argocd-initial-admin-secret -n argocd
+      echo aE1tSDEzckotQkFmRHZsLQ== | base64 --decode
+  ```
 
 Hurray! The ArgoCD UI is here with you!!!!
 
