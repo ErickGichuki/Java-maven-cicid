@@ -17,7 +17,8 @@ Continuous Delivery(CD)
 
 - Install Kind from the official docs.
 - Create a cluster
-  ``` kind create cluster --name=erics
+  ```
+  kind create cluster --name=erics
   ```
 - Verify the cluster is created ```kind get clusters```
 - To delete a cluster ```kind delete cluster --name=erics```
