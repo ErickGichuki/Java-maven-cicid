@@ -14,6 +14,8 @@ pipeline {
   }
   stages {
     stage('Checkout') {
+      echo "cleaning the workspace"
+      deleteDir()
       steps {
         echo "Checking out code..."
         git branch: 'main', url: 'https://github.com/ErickGichuki/Java-maven-cicid.git' 
